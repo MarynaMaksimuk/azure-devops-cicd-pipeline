@@ -4,7 +4,7 @@ const port = process.env.PORT || 3000;
 
 // Define the main route
 app.get('/', (req, res) => {
-  res.send('Hello from Azure Pipelines!');
+  res.send('Hello from Azure Pipelines v2!');
 });
 
 // Only start the server when run directly (not imported)
