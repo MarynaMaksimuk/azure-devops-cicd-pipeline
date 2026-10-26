@@ -17,7 +17,7 @@ describe('App', () => {
       const response = await fetch(`http://localhost:${port}/`);
       const text = await response.text();
       assert.strictEqual(response.status, 200);
-      assert.strictEqual(text, 'Hello from Azure Pipelines!');
+      assert.strictEqual(text, 'Hello from Azure Pipelines v2!');
     } finally {
       server.close();
     }
