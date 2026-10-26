@@ -1,0 +1,26 @@
+{
+  "name": "azure-pipeline-demo",
+  "version": "1.0.0",
+  "description": "Demo app for Azure DevOps CI/CD pipeline",
+  "main": "index.js",
+  "scripts": {
+  	"start": "node index.js",
+  	"build": "echo Build step completed",
+  	"test": "node --test test.js"
+},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/MarynaMaksimuk/azure-pipeline-demo.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/MarynaMaksimuk/azure-pipeline-demo/issues"
+  },
+  "homepage": "https://github.com/MarynaMaksimuk/azure-pipeline-demo#readme",
+  "dependencies": {
+    "express": "^5.3.0"
+  }
+}
