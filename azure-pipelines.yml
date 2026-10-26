@@ -1,0 +1,39 @@
+trigger:
+  - main
+
+pool: SelfHosted
+
+steps:
+  - task: UseNode@1
+    inputs:
+      version: '20.x'
+    displayName: 'Install Node.js'
+
+  - script: |
+      npm install
+    displayName: 'Install dependencies'
+
+  - script: |
+      npm run build
+    displayName: 'Build project'
+
+  - script: |
+      npm test
+    displayName: 'Run tests'
+
+  - task: CopyFiles@2
+    inputs:
+      sourceFolder: '$(Build.SourcesDirectory)'
+      contents: |
+        index.js
+        package.json
+        package-lock.json
+        test.js
+      targetFolder: '$(Build.ArtifactStagingDirectory)'
+    displayName: 'Copy project files'
+
+  - task: PublishPipelineArtifact@1
+    inputs:
+      artifactName: 'nodejs-app'
+      targetPath: '$(Build.ArtifactStagingDirectory)'
+    displayName: 'Publish pipeline artifact'
